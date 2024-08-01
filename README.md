@@ -12,6 +12,7 @@ This project is a website built using Flask that utilizes a machine learning mod
   - `no_stroke.html`: The page displayed if the model predicts no stroke risk.
 - `static/`: Directory containing static files such as images and CSS.
   - `2.jpg`: Favicon for the web application.
+  - `background.png`: background image for the web application.
   - `style.css`: CSS stylesheet for styling the web pages.
 
 ## Setup Instructions
@@ -34,16 +35,16 @@ This project is a website built using Flask that utilizes a machine learning mod
 
 2. Create a virtual environment and activate it:
 
-  ```bash
+   ```bash
     python -m venv venv
     source venv/bin/activate   # On Windows use `venv\Scripts\activate`
-```
+    ```
 
 3. Install the required packages:
 
-```bash
-  pip install Flask scikit-learn numpy
-```
+   ```bash
+    pip install Flask scikit-learn numpy
+    ```
 
 4. Ensure the machine learning model s_prediction_model.pkl is in the same directory as app.py.
 
