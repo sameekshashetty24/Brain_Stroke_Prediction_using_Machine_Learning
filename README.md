@@ -29,18 +29,27 @@ This project is a website built using Flask that utilizes a machine learning mod
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/stroke-prediction-web-app.git
+   git clone https://github.com/sameekshashetty24/stroke-prediction-web-app.git
    cd stroke-prediction-web-app
 
-2.**Create a virtual environment and activate it**:
+2. Create a virtual environment and activate it:
 
   ```bash
     python -m venv venv
     source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+```
 
-3.**Install the required packages:**
+3. Install the required packages:
 
 ```bash
   pip install Flask scikit-learn numpy
+```
 
-4.Ensure the machine learning model s_prediction_model.pkl is in the same directory as app.py.
+4. Ensure the machine learning model s_prediction_model.pkl is in the same directory as app.py.
+
+### Running the Application
+1. Start the Flask development server:
+   ```bash
+     python app.py
+   ```
+2. Open your web browser and navigate to http://127.0.0.1:5000/ to access the application.
