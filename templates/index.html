@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stroke Prediction</title>
+    <link rel="icon" type="image/x-icon" href="/static/2.jpg">
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+        async function submitForm() {
+            const data = {
+                gender: document.getElementById('gender').value,
+                age: document.getElementById('Age').value,
+                hypertension: document.getElementById('Hypertension').value,
+                heart_disease: document.getElementById('heartdisease').value,
+                ever_married: document.getElementById('evermarried').value,
+                work_type: document.getElementById('Worktype').value,
+                Residence_type: document.getElementById('Residencetype').value,
+                avg_glucose_level: document.getElementById('avggl').value,
+                bmi: document.getElementById('bmi').value,
+                smoking_status: document.getElementById('smoking').value
+            };
+            console.log("noice ",data)
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                const result = await response.text();
+                document.open();
+                document.write(result);
+                document.close();
+            } else {
+                alert('Error: ' + response.statusText);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>A Lightweight Machine Learning Model to Predict Brain Stroke</h1>
+    <marquee  class="marquee-text" direction="right">"Early Detection Saves Lives - Evaluate Your Stroke Risk Today!"</marquee>
+    <hr>
+    <div class="container">
+        <form onsubmit="event.preventDefault(); submitForm();">
+            <div class="row">
+                <label for="gender">Gender:</label>
+                <input type="number" id="gender" placeholder="(0-Female) & (1-Male)" min="0" max="1" required>
+            </div>
+            <div class="row">
+                <label for="Age">Age:</label>
+                <input type="number" id="Age" placeholder="Enter your Age" min="0" required>
+            </div> 
+            <div class="row">
+                <label for="Hypertension">Hypertension:</label>
+                <input type="number" id="Hypertension" placeholder="(0-No) & (1-Yes)" min="0" max="1" required>
+            </div>
+            <div class="row">
+                <label for="heartdisease">Heart Disease:</label>
+                <input type="number" id="heartdisease" placeholder="(0-No) & (1-Yes)" min="0" max="1" required>
+            </div>
+            <div class="row">
+                <label for="evermarried">Ever Married:</label>
+                <input type="number" id="evermarried" placeholder="(0-No) & (1-Yes)" min="0" max="1" required>
+            </div>
+            <div class="row">
+                <label for="Worktype">Work Type:</label>
+                <input type="number" id="Worktype" placeholder="(0-Govt_job),(1-Never_worked),(2-Private),(3-Self_employed),(4-Children)" min="0" max="4" required>
+            </div>
+            <div class="row">
+                <label for="Residencetype">Residence Type:</label>
+                <input type="number" id="Residencetype" placeholder="(0-Rural) & (1-Urban)" min="0" max="1" required>
+            </div>
+            <div class="row">
+                <label for="avggl">Avg Glucose Level:</label>
+                <input type="number" id="avggl" placeholder="Avg_glucose_level" step="any" required>
+            </div>
+            <div class="row">
+                <label for="bmi">BMI:</label>
+                <input type="number" id="bmi" placeholder="BMI" step="any" required>
+            </div>
+            <div class="row">
+                <label for="smoking">Smoking Status:</label>
+                <input type="number" id="smoking" placeholder="(0-Unknown),(1-formerly smoked),(2-never smoked),(3-smokes)" min="0" max="3" required>
+            </div>
+            <center>
+                <button type="submit">SUBMIT</button>
+            </center>
+        </form>
+    </div>
+</body>
+</html>

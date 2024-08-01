@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stroke Alert</title>
+    <link rel="icon" type="image/x-icon" href="/static/2.jpg">
+    <!--<link rel="stylesheet" href="/static/style.css">-->
+    <style>
+        h1{
+            font-size: 50px;
+        }
+        p strong{
+            color:red;
+            font-size: 70px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-image:url(/static/background.png);
+            background-attachment: fixed;
+            background-size: cover;
+            color: aqua;
+        }
+        p{
+            font-size:60px ;
+            color: aliceblue;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        center button{
+            width: 200px;
+            color: rgb(6, 40, 28);
+            background-color:rgb(5, 218, 242);
+            border-radius: 10px;
+            height: 40px;
+            cursor: pointer;
+        }
+        center button:hover{
+            width: 220px;
+            color: rgb(6, 40, 28);
+            background-color:rgb(180, 223, 228);
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1><b>Stroke Risk Prediction</b></h1>
+        <p><strong>Alert!</strong></p>
+        <p>The model has predicted that you are at risk of a stroke.</p>
+        <button onclick="window.location.href='/'">Return to the Home Page</button>
+    </center>
+</body>
+</html>
