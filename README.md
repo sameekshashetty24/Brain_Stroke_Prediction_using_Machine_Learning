@@ -31,3 +31,16 @@ This project is a website built using Flask that utilizes a machine learning mod
    ```bash
    git clone https://github.com/yourusername/stroke-prediction-web-app.git
    cd stroke-prediction-web-app
+
+2.**Create a virtual environment and activate it**:
+
+  ```bash
+    python -m venv venv
+    source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+
+3.**Install the required packages:**
+
+```bash
+  pip install Flask scikit-learn numpy
+
+4.Ensure the machine learning model s_prediction_model.pkl is in the same directory as app.py.
